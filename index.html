@@ -1,1 +1,99 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Skyline</title><style>body{max-width:720px;margin:60px auto;padding:0 20px;font:16px/1.6 -apple-system,sans-serif}a{color:#ff5a3c}</style></head><body><h1>Skyline</h1><p>A private flight log &amp; globe for iPhone.</p><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="support.html">Support</a></li></ul></body></html>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Skyline — Scan passes. Map your flights.</title>
+<meta name="description" content="Snap a boarding pass — Skyline reads it with on-device AI and pins the flight on a living 3D globe. No account, no servers, works in Airplane Mode.">
+<style>
+:root{--ink:#0b1020;--mut:#5b6178;--bg:#f6f7fb;--a:#3a6df0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+a{color:#fff;text-decoration:none}
+.hero{background:radial-gradient(120% 90% at 50% 0%,#16224d 0%,#0a0f24 55%,#05070f 100%);color:#fff;text-align:center;padding:92px 22px 104px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -10% -45% -10%;height:60%;background:radial-gradient(closest-side,rgba(74,120,255,.30),transparent)}
+.icon{width:104px;height:104px;border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.45);margin-bottom:24px}
+.hero h1{font-size:clamp(34px,5vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1.12}
+.hero p{font-size:clamp(17px,2.2vw,21px);color:#c4cdf0;margin:18px auto 32px;max-width:620px}
+.cta{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{background:#fff;color:#0a0f24!important;font-weight:700;padding:15px 26px;border-radius:14px;display:inline-block}
+.btn.ghost{background:rgba(255,255,255,.14);color:#fff!important;backdrop-filter:blur(6px)}
+.features{padding:24px 0 8px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:56px 0}
+.feat+.feat{border-top:1px solid #e9ebf3}
+.feat.alt .txt{order:2}
+.feat h2{font-size:clamp(25px,3.2vw,34px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+.feat p{color:var(--mut);font-size:17.5px}
+.kicker{color:var(--a);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px}
+.shot{display:flex;justify-content:center}
+.shot img{width:288px;max-width:76vw;border-radius:36px;box-shadow:0 26px 70px rgba(20,24,60,.22)}
+.privacy{background:#0a0f24;color:#fff;padding:76px 0;text-align:center}
+.privacy .kicker{color:#7da2ff}
+.privacy h2{font-size:clamp(25px,3.2vw,34px);font-weight:800;letter-spacing:-.02em}
+.privacy>.wrap>p{color:#aab3d6;font-size:18px;margin-top:12px;max-width:680px;margin-inline:auto}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;text-align:left}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:24px}
+.card h3{font-size:18px;margin-bottom:7px}.card p{color:#aab3d6;font-size:15px}
+footer{background:#05070f;color:#aeb4cf;text-align:center;padding:48px 22px;font-size:14px}
+footer a{color:#cdd3ee;text-decoration:underline;margin:0 9px}
+.built{margin-top:12px}.built a{color:#8ea2ff}
+@media(max-width:820px){.feat{grid-template-columns:1fr;gap:26px;padding:44px 0}.feat.alt .txt{order:0}.grid3{grid-template-columns:1fr}}
+</style></head><body>
+
+<header class="hero">
+  <img class="icon" src="icon.png" alt="Skyline">
+  <h1>Scan passes. Map your flights.</h1>
+  <p>Snap a boarding pass — Skyline reads it with on-device AI and pins the flight as a glowing arc on a living 3D globe. No account, no servers, works in Airplane Mode.</p>
+  <div class="cta">
+    <a class="btn" href="https://apps.apple.com/app/id6770172195">Download on the App Store</a>
+    <a class="btn ghost" href="support.html">How it works</a>
+  </div>
+</header>
+
+<main class="wrap features">
+  <div class="feat">
+    <div class="txt"><div class="kicker">Your 3D globe</div>
+      <h2>Every flight, a glowing arc on a night-lit Earth</h2>
+      <p>Your travel history rendered as arcs across a living 3D globe you can spin — a map that belongs only to you.</p></div>
+    <div class="shot"><img src="shots/1-globe.png" alt="Skyline 3D globe"></div>
+  </div>
+  <div class="feat alt">
+    <div class="txt"><div class="kicker">Scan a boarding pass</div>
+      <h2>A photo in, a logged flight out</h2>
+      <p>On-device AI reads the pass and pins the route automatically — no typing, no account, nothing leaves your phone.</p></div>
+    <div class="shot"><img src="shots/2-scan.png" alt="Scan a boarding pass"></div>
+  </div>
+  <div class="feat">
+    <div class="txt"><div class="kicker">Flight detail</div>
+      <h2>Route, dates and aircraft at a glance</h2>
+      <p>Tap any flight for the full picture — origin, destination, times and more, beautifully laid out.</p></div>
+    <div class="shot"><img src="shots/3-detail.png" alt="Flight detail"></div>
+  </div>
+  <div class="feat alt">
+    <div class="txt"><div class="kicker">Your flight log</div>
+      <h2>A private journal of everywhere you've been</h2>
+      <p>Every trip in a clean, searchable list — your personal aviation history, on your iPhone.</p></div>
+    <div class="shot"><img src="shots/4-flights.png" alt="Flight list"></div>
+  </div>
+</main>
+
+<section class="privacy"><div class="wrap">
+  <div class="kicker">Private by design</div>
+  <h2>No account. No servers. Airplane-Mode ready.</h2>
+  <p>Skyline never phones home. Boarding passes are parsed with on-device AI and your flights stay on your device — it works with the radios off.</p>
+  <div class="grid3">
+    <div class="card"><h3>On-device AI</h3><p>Pass parsing runs locally — your travel data never leaves the phone.</p></div>
+    <div class="card"><h3>No tracking</h3><p>No analytics, no accounts, nothing to sign up for.</p></div>
+    <div class="card"><h3>Works offline</h3><p>Log and browse flights with no connection at all.</p></div>
+  </div>
+</div></section>
+
+<footer>
+  <div>Skyline — Flight Log &amp; Globe for iPhone</div>
+  <div style="margin-top:10px">
+    <a href="https://apps.apple.com/app/id6770172195">App Store</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+  </div>
+  <div class="built">built by <a href="https://x.com/tdinh_me">@tdinh_me</a></div>
+  <div style="margin-top:12px;opacity:.55">© 2026 Dinh Quang Trung</div>
+</footer>
+</body></html>
