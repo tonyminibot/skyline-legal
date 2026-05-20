@@ -1,0 +1,72 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Skyline — Support</title>
+<style>body{max-width:720px;margin:40px auto;padding:0 20px;font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;color:#1a1a1a}h1{font-size:30px}h2{font-size:21px;margin-top:36px;border-top:1px solid #ececf1;padding-top:24px}h2:first-of-type{border:0;padding-top:0}h3{font-size:16px;margin:20px 0 4px}a{color:#3a6df0}hr{border:none;border-top:1px solid #e2e2e2;margin:32px 0}code{background:#f2f2f7;padding:2px 5px;border-radius:4px}.muted{color:#6b6b76;font-size:14px}</style>
+</head><body>
+<h1>Skyline — Support</h1>
+<p>Skyline is the native iOS app that scans boarding passes with on-device AI and pins your flights as arcs on a 3D night-lit globe. You can also buy the full source code to build derivatives, customize, and ship your own.</p>
+
+<h2>Your purchase &amp; invoices (source code)</h2>
+<p>Payments are handled by <strong>Polar</strong>, our merchant of record. Polar issues your receipt/invoice and manages the download — so everything about a purchase lives in the Polar customer portal:</p>
+<p><strong>→ <a href="https://polar.sh/typing-technology-co-ltd/portal">Open the customer portal</a></strong></p>
+<p>Enter the email you used at checkout; Polar emails you a one-time link. From the portal you can:</p>
+<h3>Re-download the source</h3>
+<p>Your purchase doesn't expire — sign in to the portal any time to download the latest delivered zip again.</p>
+<h3>Get your invoice / receipt</h3>
+<p>The order-confirmation email from <code>support@pulserevenue.app</code> is your receipt. A formal invoice (with your billing details, VAT/tax where applicable) can be downloaded or generated from the order in the portal. Because Polar is the merchant of record, any tax is handled and shown there.</p>
+<h3>Manage the purchase</h3>
+<p>The portal lists all your orders and benefits. The source bundle is a one-time purchase — there's no subscription to cancel.</p>
+
+<h2>Purchase FAQ</h2>
+<p><strong>I didn't get any email after paying.</strong> Check the spam folder and confirm which address you entered at checkout — the email goes there, not necessarily your main inbox. Either way you can always access the download via the <a href="https://polar.sh/typing-technology-co-ltd/portal">customer portal</a>.</p>
+<p><strong>What's included?</strong> The complete Xcode project (xcodegen <code>project.yml</code> + all Swift source), the SceneKit 3D globe, the BCBP + heuristic + Apple-Intelligence boarding-pass pipeline, SwiftData persistence, the IATA airport database, Earth textures, and a customer-facing <code>AGENTS.md</code>. ~2 MB.</p>
+<p><strong>Can I use it commercially?</strong> Yes — the license covers personal and commercial use. Build derivatives, change branding, ship under your own developer account.</p>
+<p><strong>How do I build it?</strong> <code>brew install xcodegen</code> → <code>xcodegen generate</code> → open <code>Skyline.xcodeproj</code> → set your team in Signing → change <code>com.example.skyline</code> to your own bundle id → run on iOS 17+.</p>
+<p><strong>Refunds?</strong> There's a 7-day money-back guarantee — reply to your receipt email within 7 days. Polar (merchant of record) processes the refund.</p>
+
+<h2>The app — common questions</h2>
+<h3>Why won't my boarding pass scan?</h3>
+<p>Skyline parses on-device, in this order:</p>
+<p>1. <strong>Apple Intelligence</strong> reads the boarding pass from the photo and extracts the flight details (on supported devices).</p>
+<p>2. If the boarding pass has an <strong>IATA barcode</strong> (PDF417, QR, or Aztec), Skyline decodes it and uses it to verify and correct the AI result — so the airline, flight number, route and date are exact.</p>
+<p>3. On devices without Apple Intelligence, it falls back to the <strong>barcode alone</strong>, then to <strong>on-device OCR + pattern matching</strong>.</p>
+<p>If it still can't read enough, the Review screen pre-fills whatever it found and lets you edit the rest manually.</p>
+<p><strong>Tips for a better scan:</strong></p>
+<ul>
+<li>Hold the phone steady and fill the frame with the pass</li>
+<li>Make sure the barcode is in focus and not glare-blocked</li>
+<li>Crop the photo first if your library has the pass alongside other content</li>
+<li>For paper passes, lay them flat on a contrasting surface</li>
+</ul>
+<h3>Where are my flights stored?</h3>
+<p>Locally on your iPhone, in Skyline's app sandbox. Nothing leaves the device. If you have iCloud Backup enabled, your encrypted device backup will include them — but that's between you and Apple.</p>
+<h3>Can I export my flights?</h3>
+<p>Not in v2.0.0. Export to CSV is on the roadmap; if you need it sooner, email us.</p>
+<h3>Will it work offline?</h3>
+<p>Yes — entirely. Skyline has no network calls, on purpose.</p>
+<h3>Why does the camera/photo permission prompt keep appearing?</h3>
+<p>iOS asks once per fresh install. If you previously denied it, open Settings → Privacy &amp; Security → Camera (or Photos) → Skyline to grant access.</p>
+<h3>Does it support Apple Watch?</h3>
+<p>Not yet — coming in a later release.</p>
+<h3>How is Apple Intelligence used?</h3>
+<p>On supported devices (iPhone 15 Pro and later), Skyline asks the on-device language model to extract structured flight details from the boarding pass text. The model runs entirely on your device — no Apple ID, no internet, no Apple servers.</p>
+<h3>My airport isn't on the globe.</h3>
+<p>Skyline ships with about 6,000 IATA airport codes from the OpenFlights dataset. If yours is missing, please email us with the IATA code and we'll add it in the next release.</p>
+<h3>How do I delete a flight?</h3>
+<p>On the Flights tab, swipe left on the flight and tap Delete. Or open it and tap Delete in the detail view.</p>
+<h3>Can I add flights manually without a boarding pass?</h3>
+<p>Yes — tap the (+) button → Cancel out of the picker → there's a manual-entry form on the Review screen.</p>
+
+<h2>Bugs &amp; feature requests</h2>
+<p>Email <strong>support@skyline-app.com</strong> with:</p>
+<ul>
+<li>iPhone model and iOS version</li>
+<li>Skyline version (Settings → About)</li>
+<li>A short description of what happened and what you expected</li>
+</ul>
+<p>If reporting a parsing problem, attach the boarding pass photo if you're comfortable doing so. We don't store any of these — they're deleted as soon as we've reviewed them.</p>
+
+<h2>Privacy</h2>
+<p>See the <a href="/privacy.html">Privacy Policy</a>. Short version: Skyline collects nothing.</p>
+</body></html>
