@@ -27,16 +27,20 @@ html{scroll-behavior:smooth;scroll-padding-top:24px}
 body{font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
 .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
 a{color:#fff;text-decoration:none}
-.hero{background:radial-gradient(120% 90% at 50% 0%,#16224d 0%,#0a0f24 55%,#05070f 100%);color:#fff;text-align:center;padding:92px 22px 104px;position:relative;overflow:hidden}
+.hero{background:radial-gradient(120% 90% at 50% 0%,#16224d 0%,#0a0f24 55%,#05070f 100%);color:#fff;padding:60px 22px;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center}
 .hero::after{content:"";position:absolute;inset:auto -10% -45% -10%;height:60%;background:radial-gradient(closest-side,rgba(74,120,255,.30),transparent)}
-.icon{width:104px;height:104px;border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.45);margin-bottom:24px}
-.hero h1{font-size:clamp(34px,5vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1.12}
-.hero p{font-size:clamp(17px,2.2vw,21px);color:#c4cdf0;margin:18px auto 32px;max-width:620px}
-.cta{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.herogrid{max-width:1080px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;position:relative;z-index:1}
+.herocopy{text-align:left}
+.icon{width:84px;height:84px;border-radius:20px;box-shadow:0 18px 50px rgba(0,0,0,.45);margin-bottom:20px}
+.hero h1{font-size:clamp(32px,4.3vw,50px);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:14ch}
+.hero p{font-size:clamp(16px,1.5vw,19px);color:#c4cdf0;margin:18px 0 28px;max-width:520px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start}
 .btn{background:#fff;color:#0a0f24!important;font-weight:700;padding:15px 26px;border-radius:14px;display:inline-block}
 .btn.ghost{background:rgba(255,255,255,.14);color:#fff!important;backdrop-filter:blur(6px)}
 .hero .secondary{margin-top:18px;font-size:14px;color:#aab3d6}
 .hero .secondary a{color:#c4cdf0;text-decoration:underline;text-underline-offset:3px}
+.heroshot{display:flex;justify-content:center}
+.heroshot img{height:min(640px,78vh);width:auto;max-width:100%;display:block;border-radius:36px;box-shadow:0 34px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.14)}
 .features{padding:24px 22px 8px}
 .feat{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:56px 0}
 .feat+.feat{border-top:1px solid #e9ebf3}
@@ -94,6 +98,13 @@ footer{background:#05070f;color:#aeb4cf;text-align:center;padding:48px 22px;font
 footer a{color:#cdd3ee;text-decoration:underline;margin:0 9px}
 .built{margin-top:12px}.built a{color:#8ea2ff}
 @media(max-width:820px){
+ .hero{min-height:auto;padding:62px 22px 56px}
+ .herogrid{grid-template-columns:1fr;gap:32px;text-align:center}
+ .herocopy{text-align:center}
+ .hero h1{margin:0 auto;max-width:16ch}
+ .hero p{margin:18px auto 26px}
+ .cta{justify-content:center}
+ .heroshot img{height:auto;width:248px;max-width:64vw}
  .feat{grid-template-columns:1fr;gap:26px;padding:44px 0}
  .feat.alt .txt{order:0}
  .grid3{grid-template-columns:1fr}
@@ -114,14 +125,19 @@ footer a{color:#cdd3ee;text-decoration:underline;margin:0 9px}
 </div>
 
 <header class="hero">
-  <img class="icon" src="/icon.png" alt="Skyline">
-  <h1>Scan passes. Map your flights.</h1>
-  <p>Snap a boarding pass — Skyline reads it with on-device AI and pins the flight as a glowing arc on a living 3D globe. No account, no servers, works in Airplane Mode.</p>
-  <div class="cta">
-    <a class="btn" href="https://apps.apple.com/app/skyline-flight-log-globe/id6770172195">Download on the App Store</a>
-    <a class="btn ghost" href="#features">How it works</a>
+  <div class="herogrid">
+    <div class="herocopy">
+      <img class="icon" src="/icon.png" alt="Skyline">
+      <h1>Scan passes. Map your flights.</h1>
+      <p>Snap a boarding pass — Skyline reads it with on-device AI and pins the flight as a glowing arc on a living 3D globe. No account, no servers, works in Airplane Mode.</p>
+      <div class="cta">
+        <a class="btn" href="https://apps.apple.com/app/skyline-flight-log-globe/id6770172195">Download on the App Store</a>
+        <a class="btn ghost" href="#features">How it works</a>
+      </div>
+      <div class="secondary">Building your own iOS app? <a href="#source">Own the source code — $19</a></div>
+    </div>
+    <div class="heroshot"><img src="/shots/1-globe.png" alt="Skyline 3D globe — flights as glowing arcs on a night-lit Earth" width="1320" height="2868" fetchpriority="high"></div>
   </div>
-  <div class="secondary">Building your own iOS app? <a href="#source">Own the source code — $19</a></div>
 </header>
 
 <main class="wrap features" id="features">
