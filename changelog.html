@@ -1,0 +1,101 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Skyline — Changelog</title>
+<meta name="description" content="Skyline release history — every shipped version with what changed.">
+<link rel="canonical" href="https://flownmap.com/changelog">
+<link rel="icon" href="/icon.png">
+<meta name="theme-color" content="#0a0f24">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Skyline">
+<meta property="og:url" content="https://flownmap.com/changelog">
+<meta property="og:title" content="Skyline — Changelog">
+<meta property="og:description" content="Skyline release history — every shipped version with what changed.">
+<meta property="og:image" content="https://flownmap.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+body{max-width:720px;margin:40px auto;padding:0 20px;font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;color:#1a1a1a}
+h1{font-size:30px;letter-spacing:-0.01em}
+.sub{color:#5b6178;font-size:15px;margin-bottom:36px}
+h2{font-size:21px;margin-top:36px;border-top:1px solid #ececf1;padding-top:24px;display:flex;align-items:baseline;gap:14px}
+h2:first-of-type{border:0;padding-top:0;margin-top:0}
+h2 .date{color:#6b6b76;font-size:14px;font-weight:500;letter-spacing:0;margin-left:auto}
+h2 .stage{font-size:12px;font-weight:500;background:#eef2fd;color:#3a6df0;padding:2px 8px;border-radius:6px}
+h2 .stage.shipped{background:#e8f6ec;color:#1e7d39}
+ul{margin:8px 0 0 0;padding-left:20px}
+li{margin:6px 0}
+a{color:#3a6df0}
+nav{margin-bottom:24px;font-size:14px}
+nav a{margin-right:18px;color:#3a6df0}
+.muted{color:#6b6b76}
+hr{border:none;border-top:1px solid #e2e2e2;margin:32px 0}
+.footer{margin-top:48px;font-size:13px;color:#6b6b76}
+</style>
+</head><body>
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/changelog">Changelog</a>
+  <a href="/support.html">Support</a>
+  <a href="/privacy.html">Privacy</a>
+</nav>
+
+<h1>Skyline — Changelog</h1>
+<p class="sub">Every shipped version of the iOS app + the source bundle on Polar. Newest first.</p>
+
+<h2>
+  v2.0.3
+  <span class="stage">In review</span>
+  <span class="date">submitted 2026-05-22</span>
+</h2>
+<ul>
+  <li>App and App Store listing now in <strong>15 languages</strong> — English, Vietnamese, Chinese (Simplified + Traditional), Japanese, Korean, Spanish (Spain + Mexico), Portuguese (Brazil), French, German, Italian, Russian, Arabic (with RTL), Indonesian.</li>
+  <li>In-app <strong>Language picker</strong> in Settings → About; auto-detect device language on first launch.</li>
+  <li>Internal stability improvements.</li>
+</ul>
+
+<h2>
+  v2.0.2
+  <span class="stage shipped">Shipped</span>
+  <span class="date">2026-05-22</span>
+</h2>
+<ul>
+  <li>3 user-feedback fixes (h/t Ann Ng):
+    <ul>
+      <li><strong>Save boarding pass to Photos</strong> — long-press a flight's source photo to save</li>
+      <li>Sort flights by <strong>capture date</strong> rather than departure date so freshly-added passes appear at the top</li>
+      <li><strong>History search</strong> (.searchable) across airline, flight number, route, dates</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>
+  v2.0.1
+  <span class="stage shipped">Shipped</span>
+  <span class="date">2026-05-21</span>
+</h2>
+<ul>
+  <li>Source-bundle launch — $19 on Polar (full Xcode project + AGENTS.md).</li>
+  <li>flownmap.com landing redesign — two-column hero, framed iPhone screenshots, source-sale section.</li>
+</ul>
+
+<h2>
+  v2.0.0
+  <span class="stage shipped">Shipped</span>
+  <span class="date">2026-05-17</span>
+</h2>
+<ul>
+  <li><strong>Native iOS rewrite</strong> (from the previous React-Native build) — pure SwiftUI, SwiftData, SceneKit globe.</li>
+  <li><strong>Apple Intelligence</strong> boarding-pass parser, with IATA-barcode verification + on-device OCR fallback.</li>
+  <li>~6,000-airport IATA database baked in.</li>
+  <li>3D night-lit Earth with glowing flight arcs.</li>
+  <li>Released on the App Store as <code>com.devuap.skyline</code>.</li>
+</ul>
+
+<hr>
+<p class="footer">
+  Aside (private on-device AI chat) and Pulse (Paddle revenue dashboard) are
+  the other apps in <a href="https://tonysoftware.com">Tony's portfolio</a>.
+  All three are built on the same on-device-first philosophy.
+</p>
+
+</body></html>
