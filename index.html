@@ -179,6 +179,19 @@ footer a{color:#cdd3ee;text-decoration:underline;margin:0 9px}
  .price{position:static}
  .source,.privacy,.faq{padding:54px 0}
 }
+.inside{background:var(--bg);padding:72px 0;border-top:1px solid #e9ebf3}
+.inside .kicker{color:var(--a);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px}
+.inside h2{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.inside .lede{color:var(--mut);font-size:17px;margin-top:10px;max-width:640px}
+.inside .tree{background:#0e1020;color:#e6e8f0;border-radius:14px;padding:22px 26px;margin-top:28px;font:13.5px/1.7 ui-monospace,"SF Mono","Menlo",monospace;overflow-x:auto;white-space:pre;box-shadow:0 6px 30px rgba(20,22,60,.10)}
+.inside .tree .dim{color:#6e7298}
+.inside .tree .em{color:#7bd9ff}
+.inside .tree .a{color:#bdacff}
+.inside .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
+.inside .stat{background:#fff;border:1px solid #e9ebf3;border-radius:12px;padding:18px 16px}
+.inside .stat .n{font-size:24px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+.inside .stat .l{font-size:12px;letter-spacing:.10em;text-transform:uppercase;color:var(--mut);margin-top:4px}
+@media (max-width:720px){.inside .stats{grid-template-columns:repeat(2,1fr)} .inside .tree{font-size:11px;padding:16px 18px;line-height:1.55}}
 </style></head><body>
 
 <div class="psuccess" id="psuccess" role="dialog" aria-modal="true" aria-labelledby="psTitle">
@@ -270,6 +283,42 @@ footer a{color:#cdd3ee;text-decoration:underline;margin:0 9px}
       <div class="bundle-cta" style="margin-top:14px;padding:12px 14px;border:1px dashed rgba(255,255,255,0.25);border-radius:10px;font-size:13.5px;color:#cfdcf2"><a href="https://buy.polar.sh/polar_cl_O7W1Ojtq3ORpREu9TfI6PpUe6BgKbNq2wCfFY188eiZ" style="color:#fff;font-weight:600">Or get Skyline + Pulse source together — $29</a> <span style="opacity:.7">(save $9)</span></div>
       <small>Payments handled by Polar (Merchant of Record). VAT/tax handled. Receipt + portal access by email.</small>
     </aside>
+  </div>
+</div></section>
+
+<section class="inside" id="inside"><div class="wrap">
+  <div class="section-h">
+    <div class="kicker">Inside the source</div>
+    <h2>Clean Swift, no third-party dependencies — the first thing your AI agent sees.</h2>
+    <p class="lede">~3,700 lines of SwiftUI across 25 files. SceneKit globe, BCBP boarding-pass parser, on-device LLM extractor, SwiftData persistence. Localized to 14 languages out of the box. Builds clean on a fresh Xcode install.</p>
+  </div>
+  <div class="tree">
+<span class="dim">skyline-source/</span>
+<span class="dim">├── </span><span class="a">project.yml</span>                     <span class="dim"># XcodeGen — one source of truth for targets/signing</span>
+<span class="dim">├── </span><span class="em">Skyline/</span>
+<span class="dim">│   ├── </span><span class="em">App/</span>                       <span class="dim"># SkylineApp + RootView + entry chrome</span>
+<span class="dim">│   ├── </span><span class="em">Features/</span>
+<span class="dim">│   │   ├── </span>Globe/                 <span class="dim"># SceneKit night-lit Earth + arc rendering</span>
+<span class="dim">│   │   ├── </span>Capture/               <span class="dim"># Camera + photo-library boarding-pass scan</span>
+<span class="dim">│   │   ├── </span>Review/                <span class="dim"># Batch confirm-and-edit before save</span>
+<span class="dim">│   │   ├── </span>FlightDetail/          <span class="dim"># Per-flight detail sheet</span>
+<span class="dim">│   │   ├── </span>History/               <span class="dim"># Sortable past-flights list</span>
+<span class="dim">│   │   └── </span>Onboarding/            <span class="dim"># 3-step intro</span>
+<span class="dim">│   ├── </span><span class="em">Services/</span>                  <span class="dim"># BCBPParser, AIExtractor (FoundationModels),</span>
+<span class="dim">│   │                                </span><span class="dim"># HeuristicExtractor, BoardingPassPipeline, Scanner</span>
+<span class="dim">│   ├── </span><span class="em">Models/</span>                    <span class="dim"># Flight (SwiftData) + ParsedFlight</span>
+<span class="dim">│   ├── </span><span class="em">Storage/</span>                   <span class="dim"># ModelContainer setup</span>
+<span class="dim">│   └── </span><span class="em">UI/</span>                        <span class="dim"># Theme</span>
+<span class="dim">├── </span><span class="em">Resources/</span>                   <span class="dim"># Earth day + night textures, airports.json,</span>
+<span class="dim">│                                  </span><span class="dim"># Localizable.xcstrings (14 languages)</span>
+<span class="dim">├── </span><span class="em">SkylineTests/</span>                <span class="dim"># BCBP parser + flight-math unit tests</span>
+<span class="dim">└── </span><span class="a">AGENTS.md</span>                       <span class="dim"># Architecture brief for Claude / Codex / Gemini</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="n">~3,700</div><div class="l">Swift LOC</div></div>
+    <div class="stat"><div class="n">0</div><div class="l">3rd-party deps</div></div>
+    <div class="stat"><div class="n">25</div><div class="l">files</div></div>
+    <div class="stat"><div class="n">14</div><div class="l">languages</div></div>
   </div>
 </div></section>
 
