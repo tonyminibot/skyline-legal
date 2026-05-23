@@ -134,6 +134,8 @@ a{color:#fff;text-decoration:none}
 .inc li b{color:#fff;font-weight:700}
 .inc li::before{content:"✓";position:absolute;left:0;top:0;color:#7ee0a8;font-weight:800}
 .price{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:32px;text-align:center;backdrop-filter:blur(6px);position:sticky;top:24px}
+.price .launch-badge{display:inline-block;background:rgba(255,212,128,.18);color:#ffd28a;border:1px solid rgba(255,212,128,.40);padding:6px 13px;border-radius:99px;font-size:11.5px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;margin-bottom:14px}
+.price .strike{color:#a3afd6;text-decoration:line-through;font-weight:700;font-size:16px;margin-left:8px;letter-spacing:-.01em}
 .price .amt{font-size:54px;font-weight:800;letter-spacing:-.02em;line-height:1;color:#fff}
 .price .amt span{font-size:18px;color:#c4cfe5;font-weight:600}
 .price .psub{color:#c4cfe5;font-size:14.5px;margin:8px 0 20px}
@@ -260,7 +262,8 @@ footer a{color:#cdd3ee;text-decoration:underline;margin:0 9px}
       <li>Personal &amp; commercial license — ship derivative apps to the App Store under your own branding.</li>
     </ul>
     <aside class="price">
-      <div class="amt">$19<span>/one-time</span></div>
+      <div class="launch-badge">Launch price · through May 31</div>
+      <div class="amt">$19<span class="strike">$29</span><span>/one-time</span></div>
       <div class="psub">Instant download · Future updates included</div>
       <a class="btn" href="https://buy.polar.sh/polar_cl_Guub0tV9xrkQry71WzlCnZYXJn0VamaHsFzzS1Ia3pD">Buy the source</a>
       <div class="guar">✓ 7-day money-back guarantee</div>
