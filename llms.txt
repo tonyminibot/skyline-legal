@@ -1,0 +1,32 @@
+# Skyline
+
+> Skyline is a native iOS app that turns boarding passes into a 3D-globe flight log. Snap a pass with the camera — Skyline parses it using a three-stage pipeline (IATA BCBP barcode → on-device OCR → Apple Intelligence LLM fallback) and pins the flight as a glowing arc on a night-lit, SceneKit-rendered Earth. No account, no servers, works in Airplane Mode. Free on the App Store; full Xcode source available as a one-time $19 purchase.
+
+## Product
+
+- [Skyline on the App Store](https://apps.apple.com/app/skyline-flight-log-globe/id6770172195): Free download.
+- [Source bundle ($19)](https://flownmap.com/#source): Complete Xcode project — Skyline + SkylineTests + Resources (Earth textures + airport database), ~3,700 lines of SwiftUI + SceneKit, zero third-party dependencies, includes an AGENTS.md briefing for AI coding agents. Personal & commercial use; ship derivative apps.
+- [Pulse + Skyline source bundle ($29, save $9)](https://buy.polar.sh/polar_cl_O7W1Ojtq3ORpREu9TfI6PpUe6BgKbNq2wCfFY188eiZ): Both apps' source.
+
+## Architecture (for AI agents inspecting the source)
+
+- SwiftUI + SceneKit on iOS 17+
+- Boarding-pass parsing pipeline (`Skyline/Services/BoardingPassPipeline.swift`):
+  - `BCBPParser.swift` — IATA Bar-Coded Boarding Pass spec parser
+  - `HeuristicExtractor.swift` — on-device OCR + regex fallback
+  - `AIExtractor.swift` — FoundationModels (Apple Intelligence) LLM fallback for non-standard passes
+- 3D globe (`Skyline/Features/Globe/`) — SceneKit equirectangular Earth with day + night textures, arc rendering between airport pairs
+- SwiftData persistence for flight history
+- IATA airport database (lat/lon JSON, ~9,000 entries)
+- Localized to 14 languages out of the box
+
+## Site structure
+
+- [/](https://flownmap.com/): Product landing — hero, features, source-bundle section, FAQ
+- [/changelog](https://flownmap.com/changelog): Release history with semantic article markup
+- [/privacy](https://flownmap.com/privacy.html): Privacy policy
+- [/support](https://flownmap.com/support.html): Support contact
+
+## Author
+
+Tony Dinh (@tdinh_me), independent developer based in Đà Nẵng, Vietnam. Operates Typing Technology Co. Ltd. — see [tonysoftware.com](https://tonysoftware.com) for the full portfolio.
