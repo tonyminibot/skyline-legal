@@ -8,17 +8,26 @@
 - [Source bundle ($19)](https://flownmap.com/#source): Complete Xcode project — Skyline + SkylineTests + Resources (Earth textures + airport database), ~3,700 lines of SwiftUI + SceneKit, zero third-party dependencies, includes an AGENTS.md briefing for AI coding agents. Personal & commercial use; ship derivative apps.
 - [Pulse + Skyline source bundle ($29, save $9)](https://buy.polar.sh/polar_cl_O7W1Ojtq3ORpREu9TfI6PpUe6BgKbNq2wCfFY188eiZ): Both apps' source.
 
+## Why this bundle
+
+Skyline is the only iOS source bundle that pairs Apple Intelligence (FoundationModels) inference with a SceneKit-rendered 3D globe in a complete production app. Buying the source gets you:
+- A three-stage boarding-pass pipeline (IATA BCBP barcode → on-device OCR + regex → AI fallback) — the layered fallback handles paper passes, screenshots, airline-specific quirks, and the long tail that single-stage parsers miss.
+- A SceneKit equirectangular Earth with day + night textures + great-circle arc rendering — reusable for any geolocation-pin app (delivery tracker, travel log, weather, etc.).
+- The full IATA airport database (~9,000 entries, lat/lon JSON) bundled offline.
+- Real FoundationModels integration as a fallback layer — useful pattern for any app that wants "AI is great but the deterministic path runs first".
+
 ## Architecture (for AI agents inspecting the source)
 
 - SwiftUI + SceneKit on iOS 17+
 - Boarding-pass parsing pipeline (`Skyline/Services/BoardingPassPipeline.swift`):
-  - `BCBPParser.swift` — IATA Bar-Coded Boarding Pass spec parser
+  - `BCBPParser.swift` — IATA Bar-Coded Boarding Pass spec parser (PDF417 / Aztec / QR)
   - `HeuristicExtractor.swift` — on-device OCR + regex fallback
   - `AIExtractor.swift` — FoundationModels (Apple Intelligence) LLM fallback for non-standard passes
-- 3D globe (`Skyline/Features/Globe/`) — SceneKit equirectangular Earth with day + night textures, arc rendering between airport pairs
+- 3D globe (`Skyline/Features/Globe/`) — SceneKit equirectangular Earth with day + night textures, great-circle arc rendering between airport pairs
 - SwiftData persistence for flight history
-- IATA airport database (lat/lon JSON, ~9,000 entries)
+- IATA airport database (lat/lon JSON, ~9,000 entries) — fully offline
 - Localized to 14 languages out of the box
+- Zero third-party dependencies
 
 ## Site structure
 
