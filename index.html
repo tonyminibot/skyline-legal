@@ -161,6 +161,15 @@ a{color:#fff;text-decoration:none}
 .psuccess p{color:#4a5170;font-size:15.5px;margin-bottom:8px;line-height:1.6}
 .psuccess a{color:#16224d;font-weight:600}
 .psuccess .dismiss{margin-top:22px;background:#16224d;color:#fff;font-weight:700;padding:13px 28px;border-radius:12px;cursor:pointer;border:0;font-size:15px}
+.crosspromo{background:#0a0d18;color:#cdd3ee;padding:50px 22px 40px;text-align:center;border-top:1px solid #1a1d2e}
+.crosspromo .cp-label{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#8ea2ff;font-weight:700;margin-bottom:22px}
+.crosspromo .cp-grid{max-width:680px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.crosspromo .cp-card{display:flex;align-items:center;gap:14px;padding:16px 18px;background:#12152a;border:1px solid #232745;border-radius:14px;text-align:left;text-decoration:none;color:#fff;transition:transform .15s,border-color .15s,background .15s}
+.crosspromo .cp-card:hover{transform:translateY(-2px);border-color:#3a4070;background:#161a35}
+.crosspromo .cp-card img{width:48px;height:48px;border-radius:11px;flex-shrink:0}
+.crosspromo .cp-card .cp-name{font-weight:800;font-size:15.5px;letter-spacing:-.01em;line-height:1.2;color:#fff}
+.crosspromo .cp-card .cp-desc{font-size:12.5px;color:#9aa2c6;line-height:1.35;margin-top:3px}
+@media (max-width:620px){.crosspromo .cp-grid{grid-template-columns:1fr;gap:11px}.crosspromo .cp-card{padding:14px 15px}}
 footer{background:#05070f;color:#aeb4cf;text-align:center;padding:48px 22px;font-size:14px}
 footer a{color:#cdd3ee;text-decoration:underline;margin:0 9px}
 .built{margin-top:12px}.built a{color:#8ea2ff}
@@ -337,6 +346,26 @@ footer a{color:#cdd3ee;text-decoration:underline;margin:0 9px}
     <details><summary>I'm using AI agents (Claude, Codex, Gemini) — does that work?</summary><p>Yes — that's the point. The bundle ships with an <code>AGENTS.md</code> describing the architecture, the SceneKit gotchas (e.g. the +90° longitude offset for equirectangular textures), and concrete extension ideas. Hand it to an AI agent and it'll get oriented in seconds.</p></details>
   </div>
 </div></section>
+
+<section class="crosspromo">
+  <div class="cp-label">More indie iOS apps by Tony Dinh</div>
+  <div class="cp-grid">
+    <a class="cp-card" href="https://pulserevenue.app/?utm_source=flownmap&amp;utm_medium=cross-promo&amp;utm_campaign=more-by-author">
+      <img src="icons-pulse.png" alt="Pulse app icon" width="48" height="48">
+      <div>
+        <div class="cp-name">Pulse</div>
+        <div class="cp-desc">Paddle revenue + transactions on iPhone</div>
+      </div>
+    </a>
+    <a class="cp-card" href="https://getaside.app/?utm_source=flownmap&amp;utm_medium=cross-promo&amp;utm_campaign=more-by-author">
+      <img src="icons-aside.png" alt="Aside app icon" width="48" height="48">
+      <div>
+        <div class="cp-name">Aside</div>
+        <div class="cp-desc">On-device AI chat — Apple Intelligence</div>
+      </div>
+    </a>
+  </div>
+</section>
 
 <footer>
   <div>Skyline — Flight Log &amp; Globe for iPhone</div>
